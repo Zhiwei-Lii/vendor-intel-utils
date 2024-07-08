@@ -1,0 +1,26 @@
+From c0d31acbbcf7d0e2a51b4df1ad3abf00343c6d43 Mon Sep 17 00:00:00 2001
+From: "Li, Zhiwei" <zhiwei.li@intel.com>
+Date: Fri, 5 Jul 2024 12:05:29 +0800
+Subject: [PATCH] always wifi
+
+---
+ framework/src/android/net/NetworkInfo.java | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/framework/src/android/net/NetworkInfo.java b/framework/src/android/net/NetworkInfo.java
+index bb23494593..0380c156ba 100644
+--- a/framework/src/android/net/NetworkInfo.java
++++ b/framework/src/android/net/NetworkInfo.java
+@@ -216,7 +216,8 @@ public class NetworkInfo implements Parcelable {
+     @Deprecated
+     public int getType() {
+         synchronized (this) {
+-            return mNetworkType;
++            //return mNetworkType;
++	    return ConnectivityManager.TYPE_WIFI;
+         }
+     }
+ 
+-- 
+2.34.1
+
